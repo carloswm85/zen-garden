@@ -1,0 +1,153 @@
+/* ----------------------------------- SMALL DEVICES: Initial Setup */
+html {
+  overflow-x: hidden;
+  padding: 2vh 0;
+}
+
+/* This is just for centering the main components */
+
+.page-wrapper,
+.intro,
+.supporting,
+.sidebar {
+  margin: 0 auto;
+
+  p,
+  h1,
+  h2,
+  h3 {
+    color: whitesmoke;
+  }
+}
+
+@import 'fonts';
+
+
+// Link Colors
+abbr {
+  font-style: italic;
+}
+
+a {
+  color: $golden-tainoi;
+  font-style: bold;
+  font-size: 1.1em;
+  text-decoration: dotted;
+  display: inline-block;
+  border: 1px solid $white-tara;
+  padding: 0 0.5em 0 0.5em;
+  border-radius: 0.5em;
+}
+
+a:hover {
+  color: $lightblue-anakiwa;
+}
+
+a:active {
+  color: $blue-madison;
+}
+
+a:visited {
+  color: $lightblue-anakiwa;
+}
+
+
+//list characteristics
+ul {
+  list-style-type: none;
+  font-family: $font-paragraph;
+  font-weight: 500;
+}
+
+/* This is the bigger the content of the page will get */
+body>.page-wrapper {
+  max-width: 65em;
+}
+
+/* Setting 3 contained elements inside #css-zen-garden */
+.intro,
+.supporting,
+.sidebar {
+  padding: 1em;
+}
+
+/* Setting up only the child elements */
+.intro>*,
+.supporting>*,
+.sidebar>*>* {
+  margin: 0.5em;
+}
+
+
+//footer flexbox to center content
+
+.supporting footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4em;
+}
+
+footer a {
+  font-size: x-large;
+  flex-grow: 1;
+  text-align: center;
+  margin: 0.3em 0;
+  padding: 0.2em 0;
+  border-width: 2px;
+
+  &:hover {
+    background-color: $white-tara;
+    color: $blue-madison;
+  }
+}
+
+/* SIDEBAR content */
+.design-selection>*,
+.design-archives>*,
+.zen-resources>* {
+  text-align: center;
+
+  li {
+    line-height: 2.9em;
+    margin: 0.5em 0;
+
+    a {
+      background-color: $black-woodsmoke;
+      text-decoration: none;
+    }
+  }
+}
+
+.design-selection,
+.design-archives,
+.zen-resources {
+  padding: 1em;
+
+  ul {
+    padding: 0;
+  }
+}
+
+.design-selection li,
+.design-archives ul,
+.zen-resources ul {
+  border-radius: 0.5em;
+  margin: 0.5em 0;
+  background-color: rgba($color: #eeeeee, $alpha: 0.25);
+  padding: 1em;
+  border-radius: 20px;
+}
+
+
+h3 {
+
+  &::before {
+    display: inline-block;
+    padding-right: 8px;
+    content: url('../assets/spaceship-sm.png');
+
+  }
+}
+
+@import 'stars';
+@import 'planets';

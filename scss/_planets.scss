@@ -1,0 +1,157 @@
+/* ----------------- SOLAR SYSTEM */
+
+/* Icons made by <a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> */
+
+/* Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> MOON */
+
+// SUN
+#css-zen-garden::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    right: -3em;
+    top: -5em;
+    height: $size-sun;
+    width: $size-sun;
+    background: radial-gradient(#fff57b, #ffe469, #fecc51, #fcb033, #fa961b, #fa8607, #cf1010, #ff0000);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+#css-zen-garden::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    right: -4em;
+    top: -6em;
+    height: $size-sun * 1.1;
+    width: $size-sun * 1.1;
+    background: radial-gradient(#ff0000, #ffff00);
+    border-radius: 50%;
+    z-index: -2;
+    animation: sun-shines 10s linear infinite;
+}
+
+@keyframes sun-shines {
+    0% {
+        opacity: 0.9;
+    }
+
+    20% {
+        opacity: 0.6;
+    }
+
+    40% {
+        opacity: 0.2;
+    }
+
+    60% {
+        opacity: 0.6;
+    }
+
+    80% {
+        opacity: 0.75;
+    }
+
+    100% {
+        opacity: 0.9;
+    }
+}
+
+// MERCURY
+#zen-intro>header>h2::after {
+    content: url(../assets/svg/018-mercury.svg);
+    width: $size-mercury;
+    float: right;
+    animation: translation $speed-mercury linear infinite;
+    animation-delay: $traslation-delay;
+}
+
+// VENUS
+#zen-preamble > p:nth-child(3)::after {
+    content: url(../assets/svg/036-venus.svg);
+    width: $size-venus;
+    float: right;
+    animation: translation $speed-venus linear infinite;
+    animation-delay: $traslation-delay;
+}
+
+// EARTH
+#zen-explanation>p:nth-child(2)>abbr:nth-child(2)::before {
+    content: url(../assets/svg/006-planet-earth.svg);
+    width: $size-earth;
+    float: right;
+    position: absolute;
+    animation: translation $speed-earth linear infinite;
+    animation-delay: 0;
+}
+
+// MOON
+#zen-explanation>p:nth-child(2)>abbr:nth-child(2)::after {
+    content: url(../assets/svg/moon.svg);
+    width: $size-moon;
+    float: right;
+    position: absolute;
+    margin-left: 40px;
+    animation: translation $speed-moon linear infinite;
+    animation-delay: 0;
+}
+
+// MARS
+#zen-explanation>p:nth-child(3)::after {
+    content: url(../assets/svg/017-mars.svg);
+    width: $size-mars;
+    float: right;
+    animation: translation $speed-mars linear infinite;
+    animation-delay: $traslation-delay;
+}
+
+// JUPITER
+#zen-participation > p:nth-child(2)::after {
+    content: url(../assets/svg/012-jupiter.svg);
+    width: $size-jupiter;
+    float: right;
+    position: absolute;
+    animation: translation $speed-jupiter linear infinite;
+    animation-delay: $traslation-delay;
+}
+
+// SATURN
+#zen-requirements > p:nth-child(2)::after {
+    content: url(../assets/svg/028-saturn.svg);
+    width: $size-saturn;
+    float: right;
+    position: absolute;
+    animation: translation $speed-saturn linear infinite;
+    animation-delay: $traslation-delay;
+}
+
+// URANUS
+#design-selection::before {
+    content: url(../assets/svg/035-uranus.svg);
+    width: $size-uranus;
+    float: right;
+    position: absolute;
+    animation: translation $speed-uranus linear infinite;
+    animation-delay: $traslation-delay;
+}
+
+// NEPTUNE
+#zen-resources::before {
+    content: url(../assets/svg/022-neptune.svg);
+	width: $size-neptune;
+	float: right;
+	position: absolute;
+    animation: translation $speed-neptune linear infinite;
+    animation-delay: $traslation-delay;
+}
+
+@keyframes translation {
+    0% {
+        transform: translate(-100vw, -10vh);
+    }
+
+    100% {
+        transform: translate(100vw, 20vh);
+    }
+}

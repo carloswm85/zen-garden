@@ -1,0 +1,28 @@
+/* Screen change limits */
+$display-md: 50rem; // to Medium devices, at 800px
+
+/* SOLAR SYSTEM VARIABLES */
+// Units
+$time: 0.5s;
+$traslation-delay: -#{random(60)}s;
+// Sizes
+$size-sun: 20rem;
+$size-mercury: $size-sun * 0.1;
+$size-venus: $size-sun * 0.2;
+$size-earth: $size-sun * 0.2;
+$size-moon: $size-sun * 0.1;
+$size-mars: $size-sun * 0.1;
+$size-jupiter: $size-sun * 1;
+$size-saturn: $size-sun * 0.8;
+$size-uranus: $size-sun * 0.6;
+$size-neptune: $size-sun * 0.5;
+// Speed
+$speed-mercury: $time * 40;
+$speed-venus: $time * 120;
+$speed-earth: $time * 190;
+$speed-moon: $time * 190;
+$speed-mars: $time * 170;
+$speed-jupiter: $time * 120;
+$speed-saturn: $time * 280;
+$speed-uranus: $time * 100;
+$speed-neptune: $time * 150;

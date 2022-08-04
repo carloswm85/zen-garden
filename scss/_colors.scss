@@ -1,0 +1,26 @@
+$black-woodsmoke: #121417;
+$blue-madison: #0d3f6d;
+$lightblue-anakiwa: #82f8fc;
+$white-tara: #effbf2;
+$red-tuscany: #bf4e30;
+$gold-brandy-punch: #d09130;
+$golden-tainoi: #fecc51;
+
+// SITE MAIN BACKGROUND COLORS
+$background-bottom: #222C55;
+$background-level-1: #172355;
+$background-level-2: #0F1843;
+$background-level-3: #080B36;
+$background-level-4: #03072C;
+$background-top: #000024;
+
+body {
+    background-color: radial-gradient(ellipse at bottom, $blue-madison 0%, $black-woodsmoke 100%);
+}
+
+$bc-closer: #222C55;
+$bc-level-1: #172355;
+$bc-level-2: #0F1843;
+$bc-level-3: #080B36;
+$bc-level-4: #03072C;
+$bc-further: #000024;

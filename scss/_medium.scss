@@ -1,0 +1,138 @@
+@media screen and (min-width: $display-md) {
+
+    html {
+        padding: 10vh 0 10vh 0;
+    }
+
+    .intro>*,
+    .supporting>*,
+    .sidebar>*>* {
+        background-color: rgba($color: #eeeeee, $alpha: 0.25);
+        padding: 1em;
+        border-radius: 20px;
+        transition-duration: 300ms;
+        position: relative;
+    }
+
+    //transition on backgrounds
+    .intro>*:hover,
+    .supporting>*:hover,
+    .sidebar>*>*:hover {
+        background-color: rgba($color: #eeeeee, $alpha: 0.10);
+        position: relative;
+    }
+
+
+    p {
+        font-weight: 700;
+    }
+
+    h1 {
+        font-size: 3.5em;
+    }
+
+    h2 {
+        font-size: 3em;
+    }
+
+    h3 {
+        font-size: 2.5em;
+    }
+
+    .sidebar {
+        display: block;
+        position: relative;
+        width: 100%;
+    }
+
+    .intro {
+        display: grid;
+        gap: 0.5em;
+        grid-template-columns: repeat(7, 1fr);
+
+        header {
+            grid-column: 1/4;
+            grid-row: 1/2;
+        }
+
+        .summary {
+            grid-column: 4/8;
+            grid-row: 1/2;
+        }
+
+        .preamble {
+            grid-column: 2/8;
+            grid-row: 2/3;
+        }
+    }
+
+    .supporting {
+        display: grid;
+        gap: 0.5em;
+        grid-template-columns: repeat(7, 1fr);
+
+        .explanation {
+            grid-column: 1/5;
+            grid-row: 1/2;
+        }
+
+        //rocket ship   
+        #zen-explanation::before {
+        content: url('data:image/svg+xml;utf8,<svg height="500px" width="500px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M182 400 Q90 100, 250 40, Q410 100, 318 400" style="fill:red;stroke:black;"/><circle cx="250" cy="200" r="40" style="fill:blue;stroke:black;"/><polygon points="330,300 400,350 400,400 370,370 300,370" style="fill:red;stroke:black;" /><polygon points="170,300 100,350 100,400 130,370 200,370" style="fill:red;stroke:black;" /><path d="M181 400, 319 400" style="stroke:black;"/><polygon points="220,400 280,400 290,420 210,420" style="fill:red;stroke:black;" /></svg>');
+        display: block;
+        width: 500px;
+        height: 500px;
+        background-color: transparent;
+        position: absolute;
+        right: -420px;
+        top: 0;
+    }
+
+        .participation {
+            grid-column: 3/8;
+            grid-row: 2/3;
+        }
+
+        .benefits {
+            grid-column: 1/5;
+            grid-row: 3/4;
+        }
+
+        .requirements {
+            grid-column: 3/8;
+            grid-row: 4/5;
+        }
+
+        footer {
+            grid-column: 1/8;
+            grid-row: 5/6;
+        }
+    }
+
+    .supporting footer {
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: transparent;
+
+        a {
+            margin: 0.3em 0.5em;
+        }
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    .design-selection,
+    .design-archives,
+    .zen-resources {
+        background-color: transparent;
+        ul {
+            margin: 0 auto;
+            max-width: 35em;
+        }
+    }
+
+}
+
+// End Media Query

@@ -1,0 +1,123 @@
+/* ---------------------- BACKGROUND: THE DEEP SPACE */
+// Main background of the site
+body {
+	background: radial-gradient(circle at bottom,
+		$bc-further 0%,
+		$bc-level-4 20%,
+		$bc-level-3 40%,
+		$bc-level-2 60%,
+		$bc-level-1 80%,
+		$bc-closer 100%);
+  }
+  
+  /* STARS */
+  // $n is the number of stars the function will produce in one call
+  @function stars-fabric($n) {
+  
+	// Definition of $value variable
+	$value: "#{random(100)}vw #{random(110)}px #fff";
+  
+	@for $i from 2 through $n {
+	  $value: "#{$value} , #{random(100)}vw #{random(100)}vh #fff";
+	  // RESULT → box-shadow: x-position y-position color;
+	  // It determines where the stars are placed and their color
+	}
+  
+	@return unquote($value);
+  }
+  
+  // Sets a random horizontal positon for a pseudo-element. See "extra" classes.
+  @function random-star-horizontal-position () {
+	@return unquote("#{random($limit: 100)}vw");
+  }
+  
+  @function random-star-vertical-position () {
+	@return unquote("#{random($limit: 100)}px");
+  }
+  
+  $time-unit: 60s; // Determines the stars timming
+  $speed-animation: $time-unit * 3;
+  $number-stars: 50; // This value is multiplied in different places. There are way more than just $number-stars of stars.
+  
+  .extra1 {
+	// Smalls stars are produced FROM the element
+	width: 1px;
+	height: 1px;
+	position: fixed; // The fixed position solves some problems the animation produced in the scrolling of the page.
+	top: 0;
+	box-shadow: stars-fabric(10 * $number-stars); // Multiple shadows are produced for the element, and for the its PE as well.
+	animation: animationStars $speed-animation linear infinite;
+	transform: translateY(110vh); // The element is INITIALLY positioned below the reference line.
+  
+	// Medium sized stars are produced as pseudo-elements
+	&::before {
+	  content: " ";
+	  position: absolute;
+	  // distances from the pseudoelement's parent
+	  top: random-star-vertical-position();
+	  left: random-star-horizontal-position();
+	  // size of the PE
+	  width: 2px;
+	  height: 2px;
+	  box-shadow: stars-fabric(3 * $number-stars);
+	}
+  
+	// Large sized stars are produced here
+	&::after {
+	  content: " ";
+	  position: absolute;
+	  bottom: random-star-vertical-position();
+	  right: random-star-horizontal-position();
+	  width: 3px;
+	  height: 3px;
+	  box-shadow: stars-fabric(1 * $number-stars);
+	}
+  }
+  
+  .extra2 {
+	width: 1px;
+	height: 1px;
+	position: fixed;
+	top: 0;
+	box-shadow: stars-fabric(10 * $number-stars);
+	animation: animationStars $speed-animation linear infinite;
+	animation-delay: -$time-unit * 1.5; // Animation delay is necessary, so user can see starts in the background after the very first load of the page.
+	transform: translateY(110vh);
+  
+	&::before {
+	  content: " ";
+	  position: absolute;
+	  top: random-star-vertical-position();
+	  left: random-star-horizontal-position();
+	  width: 2px;
+	  height: 2px;
+	  box-shadow: stars-fabric(3 * $number-stars);
+	}
+  
+	&::after {
+	  content: " ";
+	  position: absolute;
+	  bottom: random-star-vertical-position();
+	  right: random-star-horizontal-position();
+	  width: 3px;
+	  height: 3px;
+	  box-shadow: stars-fabric(1 * $number-stars);
+	}
+  }
+  
+  .extra1,
+  .extra2 {
+	z-index: -2; // This position the stars behind the planets
+  }
+  
+  @keyframes animationStars {
+  
+	// The animation moves the entire .extra1 and .extra2 elements from below the visible vieport to above it.
+	from {
+	  transform: translateY(-100vh);
+	}
+  
+	to {
+	  transform: translateY(100vh);
+	}
+  }
